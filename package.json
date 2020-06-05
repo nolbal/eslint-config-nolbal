@@ -1,0 +1,44 @@
+{
+  "name": "eslint-config-nolbal",
+  "version": "1.0.0",
+  "description": "nolbal's javascript ESLint config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolbal/eslint-config-nolbal.git"
+  },
+  "keywords": [
+    "eslint",
+    "javascript"
+  ],
+  "author": "THE NOLBAL Corp.",
+  "contributors": [
+    {
+      "name": "Ko Hyeokjin",
+      "url": "https://mukkurum.dev"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nolbal/eslint-config-nolbal/issues"
+  },
+  "homepage": "https://github.com/nolbal/eslint-config-nolbal#readme",
+  "dependencies": {
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-import-resolver-node": "^0.3.3",
+    "eslint-import-resolver-webpack": "^0.12.1",
+    "eslint-plugin-import": "^2.20.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "peerDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "webpack": "^4.43.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
