@@ -1,10 +1,11 @@
 module.exports = {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     "airbnb",
     "airbnb/hooks",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -68,7 +69,8 @@ module.exports = {
         "format": ["camelCase", "snake_case"]
       }
     ],
-    "no-param-reassign": ["error", { "props": false }]
+    "no-param-reassign": ["error", { "props": false }],
+    "prettier/prettier": "error"
   },
   "settings": {
     "react": {
