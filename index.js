@@ -1,28 +1,88 @@
 module.exports = {
-  extends: [
-    require.resolve('eslint-config-airbnb-base'),
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended"
   ],
-  env: {
-    browser: true,
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
-  rules: {
-    'brace-style': ['error', '1tbs', {
-      allowSingleLine: false,
-    }],
-    curly: ['error', 'all'],
-    'import/no-extraneous-dependencies': ['error', {
-      devDependencies: [
-        '**/webpack.{common,dev,prod}.js',
-      ],
-    }],
+  "env": {
+    "browser": true,
   },
-  settings: {
-    'import/resolver': {
-      // https://github.com/benmosher/eslint-plugin-import/issues/1396
-      [require.resolve('eslint-import-resolver-node')]: {},
-      [require.resolve('eslint-import-resolver-webpack')]: {
-        config: 'webpack.common.js',
+  "rules": {
+    "brace-style": [
+      "error",
+      "1tbs",
+      {
+        "allowSingleLine": false
+      }
+    ],
+    "curly": [
+      "error",
+      "all"
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "camelcase": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "default",
+        "format": ["camelCase"]
       },
-    },
+      {
+        "selector": "variable",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"]
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "function",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "property",
+        "format": ["camelCase", "snake_case"]
+      }
+    ],
+    "no-param-reassign": ["error", { "props": false }]
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  }
 };
